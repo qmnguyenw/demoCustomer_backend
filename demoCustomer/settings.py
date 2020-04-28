@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3rd party
     'rest_framework',
+    'django_filters',
+    'drf_yasg',
+    'rest_framework.authtoken',
     'corsheaders', # add cors header -> allow Angular access 
     # local
     'customers.apps.CustomersConfig',

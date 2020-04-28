@@ -1,9 +1,14 @@
 from django.conf.urls import url 
-from . import views 
+from django.urls import path, include
+from rest_framework import routers
+from .views import * 
+
+router = routers.DefaultRouter()
+router.register(r'', CustomerViewSet)
 
 # create url 
 urlpatterns = [ 
-    url(r'^customers/$', views.customer_list),
-    url(r'^customers/(?P<pk>[0-9]+)$', views.customer_detail), # <pk> identify [0-9]+ stand for pk
-    url(r'^customers/age/(?P<age>[0-9]+)/$', views.customer_list_age), # <age> identify [0-9]+ stand for age
+    path('customer/', include(router.urls)),
+    # url(r'^customers/$', CustomerViewSet),
+    # url(r'^customers/age/(?P<age>[0-9]+)/$', views.customer_list_age), # <age> identify [0-9]+ stand for age
 ]
