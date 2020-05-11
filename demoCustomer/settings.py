@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'corsheaders', # add cors header -> allow Angular access 
     # local
     'customers.apps.CustomersConfig',
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
